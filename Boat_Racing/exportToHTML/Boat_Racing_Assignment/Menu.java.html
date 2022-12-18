@@ -1,0 +1,247 @@
+<html>
+<head>
+<title>Menu.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #808080;}
+.s3 { color: #6a8759;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Menu.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">Boat_Racing_Assignment</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.ArrayList</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.List</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.Random</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.Scanner</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">Menu {</span>
+<span class="s2">/* 
+  static void tryAgain() {  
+    System.out.println(&quot;Please enter a valid input&quot;); 
+    try (Scanner scanner = new Scanner(System.in)) { 
+        String user_input = scanner.nextLine();  // Read user input 
+        System.out.println(&quot;input entered: &quot; + user_input);  // Output user input 
+    } 
+  } 
+ */</span>
+
+  <span class="s0">static void </span><span class="s1">gameRules(){</span>
+      <span class="s1">System.out.println(</span><span class="s3">&quot;------------------------------------------------------GAME RULES : ------------------------------------------------------&quot;</span><span class="s1">)</span><span class="s0">;</span>
+      <span class="s1">System.out.println(</span><span class="s3">&quot;                                            1. To roll the dice, press m &quot;</span><span class="s1">)</span><span class="s0">;</span>
+      <span class="s1">System.out.println(</span><span class="s3">&quot;                          2. The players will move to the spot based on the number shown on the dice&quot;</span><span class="s1">)</span><span class="s0">;</span>
+      <span class="s1">System.out.println(</span><span class="s3">&quot;                          3. There are currents and traps scattered randomly throughout the board, &quot;</span><span class="s1">)</span><span class="s0">;</span>
+      <span class="s1">System.out.println(</span><span class="s3">&quot;       4. Currents are good, as they move you forward a random number, and traps are bad, as they move you backwards &quot;</span><span class="s1">)</span><span class="s0">;</span>
+      <span class="s1">System.out.println(</span><span class="s3">&quot;                       5. To win the game, reach the end of the board piece with one lucky last roll.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+      <span class="s1">System.out.println(</span><span class="s3">&quot;                                                     6. ENJOY :)&quot;</span><span class="s1">)</span><span class="s0">;</span>
+      <span class="s1">System.out.println(</span><span class="s3">&quot;-------------------------------------------------------------------------------------------------------------------------&quot;</span><span class="s1">)</span><span class="s0">;</span>
+  <span class="s1">}</span>
+  <span class="s0">static void </span><span class="s1">topScore() {</span>
+	  <span class="s1">System.out.println(</span><span class="s3">&quot;Top Scorers : &quot;</span><span class="s1">)</span><span class="s0">;</span>
+  <span class="s1">}</span>
+  <span class="s0">public static void </span><span class="s1">quitGame() {</span>
+	  <span class="s1">System.out.println(</span><span class="s3">&quot;Thank you for playing :)&quot;</span><span class="s1">)</span><span class="s0">;</span>
+  <span class="s1">}</span>
+  <span class="s0">public static void </span><span class="s1">gameBoard() {</span>
+	  <span class="s1">System.out.print(</span><span class="s3">&quot;-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=&quot;</span><span class="s1">)</span><span class="s0">;</span>
+	  <span class="s1">List&lt;String&gt; list = </span><span class="s0">new </span><span class="s1">ArrayList&lt;String&gt;()</span><span class="s0">;</span>
+	  <span class="s2">//Adding elements in the List</span>
+	  <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s4">0</span><span class="s0">; </span><span class="s1">i &lt; </span><span class="s4">100</span><span class="s0">; </span><span class="s1">i ++) {</span>
+		  <span class="s1">list.add(</span><span class="s3">&quot;[  |  ]&quot;</span><span class="s1">)</span><span class="s0">;</span>
+	  <span class="s1">}</span>
+	  <span class="s1">list.set(</span><span class="s4">0</span><span class="s0">,</span><span class="s3">&quot;|p1.p2|&quot;</span><span class="s1">)</span><span class="s0">;</span>
+	  <span class="s0">for</span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s4">0</span><span class="s0">; </span><span class="s1">i &lt; </span><span class="s4">100</span><span class="s0">; </span><span class="s1">i ++ ) {</span>
+		  <span class="s0">if </span><span class="s1">(i % </span><span class="s4">10 </span><span class="s1">== </span><span class="s4">0</span><span class="s1">) {</span>
+			  <span class="s1">System.out.println()</span><span class="s0">;</span>
+		  <span class="s1">}</span>
+		  <span class="s1">System.out.print(list.get(i))</span><span class="s0">;</span>
+	  <span class="s1">}</span>
+	  <span class="s1">System.out.println()</span><span class="s0">;</span>
+	  <span class="s1">System.out.println(</span><span class="s3">&quot;-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+  <span class="s1">}</span>
+  <span class="s0">public static void </span><span class="s1">trapsNCurrents() {</span>
+	  <span class="s1">List&lt;Integer&gt; trapListRow = </span><span class="s0">new </span><span class="s1">ArrayList&lt;Integer&gt;()</span><span class="s0">;</span>
+	  <span class="s1">List&lt;Integer&gt; trapListColumn = </span><span class="s0">new </span><span class="s1">ArrayList&lt;Integer&gt;()</span><span class="s0">;</span>
+
+	  <span class="s1">List&lt;Integer&gt; currentListRow = </span><span class="s0">new </span><span class="s1">ArrayList&lt;Integer&gt;()</span><span class="s0">;</span>
+	  <span class="s1">List&lt;Integer&gt; currentListColumn = </span><span class="s0">new </span><span class="s1">ArrayList&lt;Integer&gt;()</span><span class="s0">;</span>
+
+
+
+	  <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">row = </span><span class="s4">0</span><span class="s0">, </span><span class="s1">column = </span><span class="s4">0</span><span class="s0">, </span><span class="s1">i = </span><span class="s4">0</span><span class="s0">; </span><span class="s1">i &lt; </span><span class="s4">20</span><span class="s0">; </span><span class="s1">i ++) {</span>
+		  <span class="s1">Random rand = </span><span class="s0">new </span><span class="s1">Random()</span><span class="s0">;</span>
+		  <span class="s0">int </span><span class="s1">trapsRow = rand.nextInt(</span><span class="s4">9</span><span class="s1">)</span><span class="s0">;</span>
+		  <span class="s1">trapListRow.add(trapsRow)</span><span class="s0">;</span>
+
+		  <span class="s1">Random rand1 = </span><span class="s0">new </span><span class="s1">Random()</span><span class="s0">;</span>
+		  <span class="s0">int </span><span class="s1">trapsColumn = rand1.nextInt(</span><span class="s4">9</span><span class="s1">)</span><span class="s0">;</span>
+		  <span class="s1">trapListColumn.add(trapsColumn)</span><span class="s0">;</span>
+	  <span class="s1">}</span>
+	  <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">row = </span><span class="s4">0</span><span class="s0">, </span><span class="s1">column = </span><span class="s4">0</span><span class="s0">, </span><span class="s1">i = </span><span class="s4">0</span><span class="s0">; </span><span class="s1">i &lt; </span><span class="s4">20</span><span class="s0">; </span><span class="s1">i ++) {</span>
+		  <span class="s1">Random rand = </span><span class="s0">new </span><span class="s1">Random()</span><span class="s0">;</span>
+		  <span class="s0">int </span><span class="s1">currentRow = rand.nextInt(</span><span class="s4">9</span><span class="s1">)</span><span class="s0">;</span>
+		  <span class="s1">currentListRow.add(currentRow)</span><span class="s0">;</span>
+
+		  <span class="s1">Random rand1 = </span><span class="s0">new </span><span class="s1">Random()</span><span class="s0">;</span>
+		  <span class="s0">int </span><span class="s1">currentColumn = rand1.nextInt(</span><span class="s4">9</span><span class="s1">)</span><span class="s0">;</span>
+		  <span class="s1">currentListColumn.add(currentColumn)</span><span class="s0">;</span>
+	  <span class="s1">}</span>
+
+
+
+
+
+
+	  <span class="s1">System.out.println(trapListRow)</span><span class="s0">;</span>
+	  <span class="s1">System.out.println(trapListColumn)</span><span class="s0">;</span>
+	  <span class="s1">System.out.println(currentListRow)</span><span class="s0">;</span>
+	  <span class="s1">System.out.println(currentListColumn)</span><span class="s0">;</span>
+
+
+
+  <span class="s1">}</span>
+
+
+
+
+  <span class="s0">public static void </span><span class="s1">boardGame() {</span>
+	  <span class="s0">int</span><span class="s1">[][] table = </span><span class="s0">new int</span><span class="s1">[</span><span class="s4">10</span><span class="s1">][</span><span class="s4">10</span><span class="s1">]</span><span class="s0">;</span>
+	  <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i=</span><span class="s4">0</span><span class="s0">, </span><span class="s1">j=</span><span class="s4">0 </span><span class="s0">; </span><span class="s1">i &lt;</span><span class="s4">10</span><span class="s0">; </span><span class="s1">i ++) {</span>
+		  <span class="s1">j +=</span><span class="s4">1</span><span class="s0">;</span>
+		  <span class="s1">table[</span><span class="s4">0</span><span class="s1">][i] = j</span><span class="s0">;</span>
+	  <span class="s1">}</span>
+	  <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i=</span><span class="s4">0</span><span class="s0">, </span><span class="s1">j=</span><span class="s4">21 </span><span class="s0">; </span><span class="s1">i &lt;</span><span class="s4">10</span><span class="s0">; </span><span class="s1">i ++) {</span>
+		  <span class="s1">j -=</span><span class="s4">1</span><span class="s0">;</span>
+		  <span class="s1">table[</span><span class="s4">1</span><span class="s1">][i] = j</span><span class="s0">;</span>
+	  <span class="s1">}</span>
+	  <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i=</span><span class="s4">0</span><span class="s0">, </span><span class="s1">j=</span><span class="s4">20 </span><span class="s0">; </span><span class="s1">i &lt;</span><span class="s4">10</span><span class="s0">; </span><span class="s1">i ++) {</span>
+		  <span class="s1">j +=</span><span class="s4">1</span><span class="s0">;</span>
+		  <span class="s1">table[</span><span class="s4">2</span><span class="s1">][i] = j</span><span class="s0">;</span>
+	  <span class="s1">}</span>
+	  <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i=</span><span class="s4">0</span><span class="s0">, </span><span class="s1">j=</span><span class="s4">41 </span><span class="s0">; </span><span class="s1">i &lt;</span><span class="s4">10</span><span class="s0">; </span><span class="s1">i ++) {</span>
+		  <span class="s1">j -=</span><span class="s4">1</span><span class="s0">;</span>
+		  <span class="s1">table[</span><span class="s4">3</span><span class="s1">][i] = j</span><span class="s0">;</span>
+	  <span class="s1">}</span>
+	  <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i=</span><span class="s4">0</span><span class="s0">, </span><span class="s1">j=</span><span class="s4">40 </span><span class="s0">; </span><span class="s1">i &lt;</span><span class="s4">10</span><span class="s0">; </span><span class="s1">i ++) {</span>
+		  <span class="s1">j +=</span><span class="s4">1</span><span class="s0">;</span>
+		  <span class="s1">table[</span><span class="s4">4</span><span class="s1">][i] = j</span><span class="s0">;</span>
+	  <span class="s1">}</span>
+	  <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i=</span><span class="s4">0</span><span class="s0">, </span><span class="s1">j=</span><span class="s4">61 </span><span class="s0">; </span><span class="s1">i &lt;</span><span class="s4">10</span><span class="s0">; </span><span class="s1">i ++) {</span>
+		  <span class="s1">j -=</span><span class="s4">1</span><span class="s0">;</span>
+		  <span class="s1">table[</span><span class="s4">5</span><span class="s1">][i] = j</span><span class="s0">;</span>
+	  <span class="s1">}</span>
+	  <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i=</span><span class="s4">0</span><span class="s0">, </span><span class="s1">j=</span><span class="s4">60 </span><span class="s0">; </span><span class="s1">i &lt;</span><span class="s4">10</span><span class="s0">; </span><span class="s1">i ++) {</span>
+		  <span class="s1">j +=</span><span class="s4">1</span><span class="s0">;</span>
+		  <span class="s1">table[</span><span class="s4">6</span><span class="s1">][i] = j</span><span class="s0">;</span>
+	  <span class="s1">}</span>
+	  <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i=</span><span class="s4">0</span><span class="s0">, </span><span class="s1">j=</span><span class="s4">81 </span><span class="s0">; </span><span class="s1">i &lt;</span><span class="s4">10</span><span class="s0">; </span><span class="s1">i ++) {</span>
+		  <span class="s1">j -=</span><span class="s4">1</span><span class="s0">;</span>
+		  <span class="s1">table[</span><span class="s4">7</span><span class="s1">][i] = j</span><span class="s0">;</span>
+	  <span class="s1">}</span>
+	  <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i=</span><span class="s4">0</span><span class="s0">, </span><span class="s1">j=</span><span class="s4">80 </span><span class="s0">; </span><span class="s1">i &lt;</span><span class="s4">10</span><span class="s0">; </span><span class="s1">i ++) {</span>
+		  <span class="s1">j +=</span><span class="s4">1</span><span class="s0">;</span>
+		  <span class="s1">table[</span><span class="s4">8</span><span class="s1">][i] = j</span><span class="s0">;</span>
+	  <span class="s1">}</span>
+	  <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i=</span><span class="s4">0</span><span class="s0">, </span><span class="s1">j=</span><span class="s4">101 </span><span class="s0">; </span><span class="s1">i &lt;</span><span class="s4">10</span><span class="s0">; </span><span class="s1">i ++) {</span>
+		  <span class="s1">j -=</span><span class="s4">1</span><span class="s0">;</span>
+		  <span class="s1">table[</span><span class="s4">9</span><span class="s1">][i] = j</span><span class="s0">;</span>
+	  <span class="s1">}</span>
+	  <span class="s0">int </span><span class="s1">i = </span><span class="s4">111</span><span class="s0">;</span>
+	  <span class="s1">table[</span><span class="s4">2</span><span class="s1">][</span><span class="s4">4</span><span class="s1">]= i</span><span class="s0">;</span>
+	  <span class="s0">int </span><span class="s1">j = </span><span class="s4">999</span><span class="s0">;</span>
+	  <span class="s1">table[</span><span class="s4">2</span><span class="s1">][</span><span class="s4">3</span><span class="s1">] = j</span><span class="s0">;</span>
+
+
+
+	  <span class="s0">int </span><span class="s1">row</span><span class="s0">;</span>
+	  <span class="s0">int </span><span class="s1">column</span><span class="s0">;</span>
+
+	  <span class="s1">System.out.println(</span><span class="s3">&quot;+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+&quot;</span><span class="s1">)</span><span class="s0">;</span>
+	  <span class="s1">System.out.println()</span><span class="s0">;</span>
+	  <span class="s0">for </span><span class="s1">( row= </span><span class="s4">0</span><span class="s0">; </span><span class="s1">row &lt; table.length</span><span class="s0">; </span><span class="s1">row ++){</span>
+
+		  <span class="s0">for </span><span class="s1">(column = </span><span class="s4">0</span><span class="s0">; </span><span class="s1">column &lt; table.length</span><span class="s0">; </span><span class="s1">column++) {</span>
+			  <span class="s1">System.out.print(</span><span class="s3">&quot;{   &quot;</span><span class="s1">)</span><span class="s0">;</span>
+			  <span class="s1">System.out.print(table[row][column] + </span><span class="s3">&quot;   &quot;</span><span class="s1">)</span><span class="s0">;</span>
+			  <span class="s1">System.out.print(</span><span class="s3">&quot;}&quot;</span><span class="s1">)</span><span class="s0">;</span>
+			  <span class="s0">if </span><span class="s1">(row == </span><span class="s4">0</span><span class="s1">) {</span>
+				  <span class="s1">System.out.print(</span><span class="s3">&quot; &quot;</span><span class="s1">)</span><span class="s0">;</span>
+			  <span class="s1">}</span>
+		  <span class="s1">}</span>
+		  <span class="s1">System.out.println(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">&quot;</span><span class="s1">)</span><span class="s0">;</span>
+		  <span class="s1">System.out.println(</span><span class="s3">&quot;+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+&quot;</span><span class="s1">)</span><span class="s0">;</span>
+		  <span class="s1">System.out.print(</span><span class="s3">&quot;  &quot;</span><span class="s1">)</span><span class="s0">;</span>
+		  <span class="s1">System.out.println()</span><span class="s0">;</span>
+
+	  <span class="s1">}</span>
+
+
+  <span class="s1">}</span>
+
+  
+  <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+	    
+	    <span class="s1">System.out.println(</span><span class="s3">&quot;-------------🚣‍♂️ Welcome to Boat Racing game 🚣‍♂️-------------&quot;</span><span class="s1">)</span><span class="s0">;</span>
+	    <span class="s1">System.out.println(</span><span class="s3">&quot;            1. to play the game (press a)&quot;</span><span class="s1">)</span><span class="s0">;</span>
+	    <span class="s1">System.out.println(</span><span class="s3">&quot;            2. to view instructions (press s)&quot;</span><span class="s1">)</span><span class="s0">;</span>
+	    <span class="s1">System.out.println(</span><span class="s3">&quot;            3. to view leaderboard (press d)&quot;</span><span class="s1">)</span><span class="s0">;</span>
+	    <span class="s1">System.out.println(</span><span class="s3">&quot;            4. to quit game (press w)&quot;</span><span class="s1">)</span><span class="s0">;</span>
+	    
+	    <span class="s1">boardGame()</span><span class="s0">;</span>
+		<span class="s1">trapsNCurrents()</span><span class="s0">;</span>
+	    
+	    <span class="s0">boolean </span><span class="s1">correctInput = </span><span class="s0">true;</span>
+	    <span class="s0">while </span><span class="s1">(correctInput) { </span>
+	    <span class="s1">Scanner myObj = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+		<span class="s1">System.out.println(</span><span class="s3">&quot;Enter (a - play game), (s- instructions), (d- leaderboard), (w- quit) : &quot;</span><span class="s1">)</span><span class="s0">;</span>
+		<span class="s1">String user_input = myObj.nextLine()</span><span class="s0">;  </span><span class="s2">// Read user input</span>
+		<span class="s1">System.out.println(</span><span class="s3">&quot;input entered: &quot; </span><span class="s1">+ user_input)</span><span class="s0">;  </span><span class="s2">// Output user input</span>
+	    
+
+			<span class="s2">//Step after user input 'a','s','d' or 'w'</span>
+			<span class="s0">switch </span><span class="s1">(user_input) { </span>
+			    <span class="s0">case </span><span class="s3">&quot;a&quot; </span><span class="s1">: </span>
+			        <span class="s1">Scanner player1 = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">; </span>
+			    	<span class="s1">System.out.println(</span><span class="s3">&quot;Enter player 1 : &quot;</span><span class="s1">)</span><span class="s0">;</span>
+			    	<span class="s1">String input_player1 = player1.nextLine()</span><span class="s0">;  </span><span class="s2">// Read user input</span>
+			        
+			        <span class="s1">Scanner player2 = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+				    <span class="s1">System.out.println(</span><span class="s3">&quot;Enter player 2 : &quot;</span><span class="s1">)</span><span class="s0">;</span>
+					<span class="s1">String input_player2 = player2.nextLine()</span><span class="s0">;  </span><span class="s2">// Read user input</span>
+					<span class="s1">System.out.println(</span><span class="s3">&quot;PLAYER 1: &quot;</span><span class="s1">+ input_player1)</span><span class="s0">;  </span><span class="s2">// Output user input</span>
+			    	<span class="s1">System.out.println(</span><span class="s3">&quot;PLAYER 2: &quot;</span><span class="s1">+ input_player2)</span><span class="s0">;  </span><span class="s2">// Output user input</span>
+			    	<span class="s1">correctInput = </span><span class="s0">false;</span>
+			        <span class="s0">break;</span>
+				<span class="s0">case </span><span class="s3">&quot;s&quot;</span><span class="s1">:	</span>
+			    	<span class="s1">gameRules()</span><span class="s0">;</span>
+			    	
+			    	<span class="s0">break;</span>
+			    	
+			    <span class="s0">case </span><span class="s3">&quot;d&quot;</span><span class="s1">:</span>
+			    	<span class="s1">topScore()</span><span class="s0">;</span>
+			    	<span class="s0">break;</span>
+			    	
+			    <span class="s0">case </span><span class="s3">&quot;w&quot; </span><span class="s1">: </span>
+			    	<span class="s1">quitGame()</span><span class="s0">;</span>
+			    	<span class="s1">correctInput = </span><span class="s0">false;</span>
+			    	<span class="s0">break;</span>
+			<span class="s1">}	</span>
+            <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s4">0</span><span class="s0">; </span><span class="s1">i &lt; </span><span class="s4">3</span><span class="s0">;</span><span class="s1">i++) {</span>
+                <span class="s1">System.out.print(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">}</span>
+	    <span class="s1">}    </span>
+	<span class="s1">}</span>
+<span class="s1">}</span>
+
+
+</pre>
+</body>
+</html>
